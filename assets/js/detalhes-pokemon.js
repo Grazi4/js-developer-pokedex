@@ -24,11 +24,12 @@ function exibirPokemon(pokemon){
                &larr;
             </a>  
             <h1 class="detailName">${pokemon.name}</h1>
+            <h2 class="detailNumber">#${String(pokemon.id).padStart(3, '0')}</h2>
             <img class="detailImage" src="${pokemon.sprites.other.dream_world.front_default}" alt="${pokemon.name}">
         </li>
 
         <div class="detailInfo">
-            <p><strong>Number:</strong>#${pokemon.id}</p>
+            
             <p><strong>Height:</strong> ${pokemon.height / 10} m</p>
             <p><strong>Weight:</strong> ${pokemon.weight / 10} kg</p>
             <p><strong>Types:</strong> ${pokemon.types.map(type => type.type.name).join(', ')}</p>
