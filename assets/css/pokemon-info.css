@@ -40,6 +40,24 @@ html, body, ul, ol {
     opacity: 0.85;
 }
 
+.detailTypes{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin: 1rem 2rem;
+    color: #fff;
+    text-transform: capitalize;
+
+}
+
+.detailTypes .detailType{
+    border-radius: 15px;
+    padding: 0.50rem 0.75rem;
+    filter: brightness(1.1);
+}
+
+
+
 
 
 .btnVoltar{
