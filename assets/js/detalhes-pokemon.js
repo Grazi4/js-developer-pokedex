@@ -1,7 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search)
 const pokemonId = urlParams.get('id')
-
 const urlBaseApi = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`
+
+
+const buttons = document.querySelectorAll('.btnTab')
+const contents = document.querySelectorAll('.tabContentItem')
 
 async function loadDeatilsPokemon(){
     try {
@@ -33,11 +36,41 @@ function exibirPokemon(pokemon){
             <img class="detailImage" src="${pokemon.sprites.other.dream_world.front_default}" alt="${pokemon.name}">
         </li>
 
+
         <div class="detailInfo">
+
+             <div class="tabsMenu">
+                <button class="btnTab btnTabActive" data-tab="aboutTab">About</button>
+                <button class="btnTab" data-tab="baseStatsTab">Base Status</button>
+                <button class="btnTab" data-tab="evolutionTab">Evolution</button>
+                <button class="btnTab" data-tab="movesTab">Moves</button>
+            </div>
+
+            <div class="tabsContent">
+        
+                <div id="aboutTab" class="tabContentItem tabContentActive">
+                    <p><strong>Height:</strong> ${pokemon.height / 10} m</p>
+                    <p><strong>Weight:</strong> ${pokemon.weight / 10} kg</p>
+                    <p><strong>Abilities:</strong> ${pokemon.abilities.map(a => a.ability.name).join(', ')}</p>
+                    <p><strong>Moves:</strong> ${pokemon.moves.slice(0, 5).map(m => m.move.name).join(', ')}...</p>
+                </div>
+
+        
+                <div id="baseStatsTab" class="tabContentItem">
+                    <p>HP: 45</p>
+                    <p>Attack: 49</p>
+                </div>
+
+      
+                <div id="evolutionTab" class="tabContentItem">
+                    <p>Evolves to Ivysaur at Level 16.</p>
+                </div>
+
+             </div>
+
+
+
             
-            <p><strong>Height:</strong> ${pokemon.height / 10} m</p>
-            <p><strong>Weight:</strong> ${pokemon.weight / 10} kg</p>
-            <p><strong>Abilities:</strong> ${pokemon.abilities.map(ability => ability.ability.name).join(', ')}</p>
         </div>
 
     
@@ -45,3 +78,18 @@ function exibirPokemon(pokemon){
 }
 
 loadDeatilsPokemon()
+
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+
+    buttons.forEach(btn => btn.classList.remove('btnTabActive'));
+    contents.forEach(content => content.classList.remove('tabContentActive'));
+    
+    button.classList.add('btnTabActive');
+    
+    const targetTabId = button.getAttribute('data-tab');
+
+    document.getElementById(targetTabId).classList.add('tabContentActive');
+  })
+})

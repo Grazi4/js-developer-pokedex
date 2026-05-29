@@ -56,6 +56,42 @@ html, body, ul, ol {
     filter: brightness(1.1);
 }
 
+.tabsMenu {
+    display: flex;
+    justify-content: flex-start;
+    gap: 24px;
+    margin: 2rem 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: 30px;
+}
+
+.btnTab{
+    background-color: none;
+    cursor: pointer;
+    border: none;
+    padding: 10px 4px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #888888;
+    transition: color 0.2s, border-color 0.2s;
+    border-bottom: 3px solid transparent; 
+   
+}
+
+.btnTab.btnTabActive{
+    color: #000;
+    font-weight: bold;
+    border-bottom: 3px solid #000;
+}
+
+.tabContentItem{
+    display: none;
+}
+
+.tabContentItem.tabContentActive{
+    display: block;
+}
+
 
 
 
