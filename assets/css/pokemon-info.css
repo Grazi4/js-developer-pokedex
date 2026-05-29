@@ -1,0 +1,57 @@
+html, body, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+.detailItem {
+    height: 50vh;
+    margin: 0;
+    padding: 0;
+    padding-top: 1rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.detailImage{
+    max-width: 100%;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    transform: translate(-50px, 0);
+    z-index: 20;
+}
+
+.detailName{
+    text-transform: capitalize;
+    color: #fff;
+    padding: 0.5rem;
+    margin: 1rem;
+    font-size: 2.5rem;
+}
+
+.btnVoltar{
+    background-color: transparent;
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.detailInfo{
+    height: 55vh;
+    background-color: #fff;
+    margin-top: -40px;
+    padding: 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+

@@ -11,7 +11,7 @@
 }
 
 .grass {
-    background-color: #77c850;
+    background-color: #49D0B0;
 }
 
 .fire {
@@ -98,6 +98,7 @@
     text-transform: capitalize;
     color: #fff;
     margin-bottom: .25rem;
+    cursor: pointer;
 }
 
 .pokemon .detail {
